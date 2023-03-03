@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo" />
-
-    <EditText
-        android:id="@+id/edtUsuario"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Insira o nome do usuário" />
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/edtSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Insira a senha do usuário" />
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Entrar" />
+        <EditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgLogo"
+            android:layout_marginBottom="20dp"
+            android:drawableEnd="@drawable/baseline_person"
+            android:hint="Insira o nome do usuário"
+            android:padding="15dp" />
 
-    <Button
-        android:id="@+id/btnSair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sair" />
+        <EditText
+            android:id="@+id/edtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtUsuario"
+            android:drawableEnd="@drawable/baseline_lock"
+            android:hint="Insira a senha do usuário"
+            android:padding="15dp" />
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtSenha"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginRight="5dp"
+                android:id="@+id/btnEntrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtSenha"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="Entrar" />
+
+            <Button
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btnSair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtSenha"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/btnEntrar"
+                android:layout_weight="1"
+                android:text="Sair" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
